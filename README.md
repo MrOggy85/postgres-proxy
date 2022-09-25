@@ -24,3 +24,50 @@ the credentials and location of your DB as well as the SQL you want to execute.
 ```sh
 $ ./run.sh
 ```
+
+## Usage
+
+### `curl`
+
+```sh
+curl --request POST \
+  --url HTTP_ADDRESS_OF_ADEPLOYED_API \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"u": "DB_USER",
+	"pw": "DB_PASSWORD",
+	"h": "DB_HOST",
+	"port": "DB_PORT",
+	"db": "DB_NAME",
+	"q": "SELECT * FROM table"
+}'
+```
+
+### `axios`
+
+```ts
+type PostgresProxyResponse = {
+  command: "SELECT";
+  query: unknown;
+  rowCount: number;
+  rows: any[][];
+};
+
+async function request(q: string) {
+  const response = await axios({
+    url: "/",
+    baseURL: HTTP_ADDRESS_OF_ADEPLOYED_API,
+    method: "POST",
+    data: {
+      u: "DB_USER",
+      pw: "DB_PASSWORD",
+      h: "DB_HOST",
+      port: "DB_PORT",
+      db: "DB_NAME",
+      q: "SELECT * FROM table",
+    },
+  });
+
+  return response.data;
+}
+```
