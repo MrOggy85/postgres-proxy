@@ -1,6 +1,6 @@
 #!/bin/bash
 
-deno run \
+denon run \
   --allow-net \
   --allow-env=PGAPPNAME,PGDATABASE,PGHOST,PGOPTIONS,PGPASSWORD,PGPORT,PGUSER \
   main.ts
