@@ -56,7 +56,7 @@ router
       throw new AppError("'q' value not present", 400);
     }
 
-    console.log('q', q);
+    console.log("q", q);
 
     const result = await runQuery(q, [
       u,
