@@ -20,7 +20,7 @@ jobs:
           deno-version: 1.27.0
 
       - name: Cache Dependencies
-        run: deno cache deps.ts
+        run: deno cache ./src/deps.ts
 
       - name: Run lint
         run: deno lint ./src
