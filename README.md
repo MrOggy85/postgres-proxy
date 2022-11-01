@@ -1,4 +1,4 @@
-# postgres-proxy
+# postgres-proxy [![Check](https://github.com/MrOggy85/postgres-proxy/actions/workflows/check.yml/badge.svg)](https://github.com/MrOggy85/postgres-proxy/actions/workflows/check.yml)
 
 Lightweight HTTP proxy for sending SQL commands to a Postgres DB
 
